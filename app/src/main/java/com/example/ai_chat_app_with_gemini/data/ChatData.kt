@@ -6,6 +6,7 @@ import com.google.ai.client.generativeai.type.ResponseStoppedException
 import com.google.ai.client.generativeai.type.content
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import java.lang.Exception
 
 object ChatData {
 
@@ -26,7 +27,7 @@ object ChatData {
                 bitmap = null,
                 isFromUser = false
             )
-        }catch (e : ResponseStoppedException){
+        }catch (e : Exception){
             return ChatDataModelClass(
                 prompt = e.message ?: "Error",
                 bitmap = null,
@@ -55,7 +56,7 @@ object ChatData {
                 bitmap = null,
                 isFromUser = false
             )
-        }catch (e : ResponseStoppedException){
+        }catch (e : Exception){
             return ChatDataModelClass(
                 prompt = e.message ?: "Error",
                 bitmap = null,
